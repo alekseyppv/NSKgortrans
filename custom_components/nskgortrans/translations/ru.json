@@ -1,0 +1,40 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "NSK Gortrans",
+        "description": "Введите параметры остановки и маршрута.",
+        "data": {
+          "stop_url": "Ссылка на остановку",
+          "route": "Номер маршрута",
+          "transport_type": "Тип транспорта",
+          "scan_interval": "Интервал обновления (сек)"
+        }
+      }
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "NSK Gortrans",
+        "description": "Измените параметры парсинга.",
+        "data": {
+          "stop_url": "Ссылка на остановку",
+          "route": "Номер маршрута",
+          "transport_type": "Тип транспорта",
+          "scan_interval": "Интервал обновления (сек)"
+        }
+      }
+    }
+  },
+  "selector": {
+    "transport_type": {
+      "options": {
+        "bus": "Автобус",
+        "trolleybus": "Троллейбус",
+        "shuttle_taxi": "Маршрутное такси",
+        "tram": "Трамвай"
+      }
+    }
+  }
+}
