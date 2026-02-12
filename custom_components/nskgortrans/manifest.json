@@ -1,0 +1,11 @@
+{
+  "domain": "nskgortrans",
+  "name": "NSK Gortrans",
+  "codeowners": ["@nskgortrans"],
+  "config_flow": true,
+  "documentation": "https://github.com/NSKgortrans/NSKgortrans",
+  "iot_class": "cloud_polling",
+  "loggers": ["custom_components.nskgortrans"],
+  "requirements": [],
+  "version": "1.0.0"
+}

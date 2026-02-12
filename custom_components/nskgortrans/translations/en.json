@@ -1,0 +1,40 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "NSK Gortrans",
+        "description": "Set stop page and route settings.",
+        "data": {
+          "stop_url": "Stop URL",
+          "route": "Route number",
+          "transport_type": "Transport type",
+          "scan_interval": "Update interval (sec)"
+        }
+      }
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "NSK Gortrans",
+        "description": "Change parser settings.",
+        "data": {
+          "stop_url": "Stop URL",
+          "route": "Route number",
+          "transport_type": "Transport type",
+          "scan_interval": "Update interval (sec)"
+        }
+      }
+    }
+  },
+  "selector": {
+    "transport_type": {
+      "options": {
+        "bus": "Bus",
+        "trolleybus": "Trolleybus",
+        "shuttle_taxi": "Shuttle taxi",
+        "tram": "Tram"
+      }
+    }
+  }
+}
