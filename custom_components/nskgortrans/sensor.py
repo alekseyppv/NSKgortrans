@@ -2,11 +2,10 @@
 
 from __future__ import annotations
 
-from homeassistant.components.sensor import SensorEntity, SensorStateClass
+from homeassistant.components.sensor import SensorEntity
 from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import UnitOfTime
+from homeassistant.const import EntityCategory
 from homeassistant.core import HomeAssistant
-from homeassistant.helpers.device_registry import DeviceInfo
 from homeassistant.helpers.entity_platform import AddEntitiesCallback
 from homeassistant.helpers.update_coordinator import CoordinatorEntity
 
@@ -28,8 +27,8 @@ class NskgortransSensor(CoordinatorEntity[NskgortransCoordinator], SensorEntity)
     """Representation of arrival time sensor."""
 
     _attr_icon = "mdi:bus-clock"
-    _attr_native_unit_of_measurement = UnitOfTime.MINUTES
-    _attr_state_class = SensorStateClass.MEASUREMENT
+    _attr_native_unit_of_measurement = "мин"
+    _attr_entity_category = EntityCategory.DIAGNOSTIC
 
     def __init__(self, entry: ConfigEntry, coordinator: NskgortransCoordinator) -> None:
         super().__init__(coordinator)
@@ -47,13 +46,6 @@ class NskgortransSensor(CoordinatorEntity[NskgortransCoordinator], SensorEntity)
             "transport_type_name": TRANSPORT_TYPES[transport_type],
             "stop_url": stop_url,
         }
-        self._attr_device_info = DeviceInfo(
-            identifiers={(DOMAIN, entry.entry_id)},
-            name=f"NSK Gortrans {route}",
-            manufacturer="NSK Gortrans",
-            model="Public transport stop forecast",
-            configuration_url=stop_url,
-        )
 
     @property
     def native_value(self) -> int | None:
